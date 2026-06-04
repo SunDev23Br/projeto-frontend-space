@@ -1,34 +1,50 @@
-<footer role="contentinfo">
+<footer role="contentinfo" class="footer">
 
-  <section>
-    <h2>Orbital Watch</h2>
-    <p>Sistema de Monitoramento de Detritos Espaciais</p>
-  </section>
+  <div class="footer-container">
 
-  <nav aria-label="Links do rodapé">
-    <ul>
-      <li><a href="#">Dashboard</a></li>
-      <li><a href="#">Telemetria</a></li>
-      <li><a href="#">Alertas</a></li>
-      <li><a href="#">Relatórios</a></li>
-    </ul>
-  </nav>
+    <!-- Identidade do sistema -->
+    <section class="footer-brand">
+      <h2 class="footer-title">Orbital Watch</h2>
+      <p class="footer-description">
+        Sistema de Monitoramento de Detritos Espaciais em Tempo Real
+      </p>
+    </section>
 
-  <section>
-    <p>
-      Status do Sistema: 
-      <strong>Operacional</strong>
-    </p>
+    <!-- Navegação -->
+    <nav class="footer-nav" aria-label="Links do rodapé">
+      <h3 class="footer-heading">Navegação</h3>
+      <ul class="footer-list">
+        <li><a href="#" class="footer-link">Dashboard</a></li>
+        <li><a href="#" class="footer-link">Telemetria</a></li>
+        <li><a href="#" class="footer-link">Alertas</a></li>
+        <li><a href="#" class="footer-link">Relatórios</a></li>
+      </ul>
+    </nav>
 
-    <p>
-      Última atualização: 
-      <time datetime="2026-06-03T12:42:00Z">12:42 UTC</time>
-    </p>
-  </section>
+    <!-- Status do sistema -->
+    <section class="footer-status" aria-live="polite">
+      <h3 class="footer-heading">Status da Missão</h3>
 
-  <hr>
+      <p>
+        Sistema:
+        <strong class="status-operational">Operacional</strong>
+      </p>
 
-  <section>
+      <p>
+        Última atualização:
+        <time datetime="2026-06-03T12:42:00Z">
+          12:42 UTC
+        </time>
+      </p>
+    </section>
+
+  </div>
+
+  <!-- Separador visual -->
+  <hr class="footer-divider">
+
+  <!-- Direitos -->
+  <section class="footer-bottom">
     <p>
       © 2026 Orbital Watch • Missão ativa • Todos os direitos reservados
     </p>
