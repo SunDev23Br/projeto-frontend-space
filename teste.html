@@ -1,35 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Space Guardian</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<h2></h2>
 
 <body>
-    <section>
-        <nav-bar>
-            <p1> NAVEGAÇÃO</p1> <br>
-                <a href="index.html">Home</a><br>
-                <a href="debris.html">Detritos</a> <br>
-                <a href="satellites.html">Satélites</a> <br>
-                <a href="alerts.html">Alertas</a> <br>
-<article class="card">
-  <img src="imagem.jpg" alt="icone de status ativo">
-  <div class="card-content">
-    <h2>Status dos Sistemas</h2>
-    <p>Sensores de radar</p>
-    <p>Rede de Satélites</p>
-    <p>Processamento</p>
-    <p>Banco de Dados</p>
 
-  </div>
-</article>
-
-        </nav-bar>
-    </section>
     
+    <nav class="sidebar">
+
+        <h2 class="nav-title">NAVEGAÇÃO</h2>
+        <a href="index.html" class="nav-link">
+            <img src="assets/icons/home.png" alt="icone da home" class="home-icon">
+            <span>Home</span>
+        </a>
+
+        
+        <a href="debris.html" class="nav-link"> Detritos</a>
+        <a href="satellites.html" class="nav-link"> Satélites</a>
+        <a href="alerts.html" class="nav-link"> Alertas</a>
+
+        
+        <article class="card">
+
+            <h3 class="systems-title">
+                STATUS DOS SISTEMAS
+            </h3>
+
+            <ul class="system-list">
+
+                <li class="system-item">
+
+                    <img
+                        src="assets/icons/verificar.png"
+                        alt="Sistema online"
+                        class="system-icon">
+
+                    <span class="system-name">
+                        Sensores de Radar
+                    </span>
+
+                    <span class="system-status">
+                        ONLINE
+                    </span>
+
+                </li>
+
+                <li class="system-item">
+
+                    <img
+                        src="assets/icons/verificar.png"
+                        alt="Sistema online"
+                        class="system-icon">
+
+                    <span class="system-name">
+                        Rede de Satélites
+                    </span>
+
+                    <span class="system-status">
+                        ONLINE
+                    </span>
+
+                </li>
+
+                <li class="system-item">
+
+                    <img
+                        src="assets/icons/verificar.png"
+                        alt="Sistema online"
+                        class="system-icon">
+
+                    <span class="system-name">
+                        Processamento
+                    </span>
+
+                    <span class="system-status">
+                        ONLINE
+                    </span>
+
+                </li>
+
+                <li class="system-item">
+
+                    <img
+                        src="assets/icons/verificar.png"
+                        alt="Sistema online"
+                        class="system-icon">
+
+                    <span class="system-name">
+                        Banco de Dados
+                    </span>
+
+                    <span class="system-status">
+                        ONLINE
+                    </span>
+
+                </li>
+
+            </ul>
+
+        </article>
+
+    </nav>
+
+    
+    <main class="main-content">
+
+        <h1>Space Guardian</h1>
+        <p>Sistema de rastreamento de detritos espaciais</p>
+
+    </main>
+
 </body>
+
 </html>

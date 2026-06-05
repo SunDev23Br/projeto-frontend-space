@@ -1,0 +1,163 @@
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    display:flex;
+    min-height:100vh;
+
+    background:#08111f;
+
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+    width:280px;
+    min-width:280px;
+
+    background:#0b1525;
+
+    padding:24px;
+
+    border-right:1px solid #17304d;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.nav-title{
+    color:white;
+
+    font-size:14px;
+
+    letter-spacing:1px;
+
+    margin-bottom:20px;
+}
+
+.nav-link{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    color:#b8c7d9;
+
+    text-decoration:none;
+
+    margin-bottom:16px;
+
+    transition:.3s;
+
+    font-size:16px;
+}
+
+.nav-link:hover{
+    color:#00c2ff;
+}
+
+.home-icon{
+    width:24px;
+    height:24px;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(0 0 6px rgba(255,255,255,.7))
+        drop-shadow(0 0 12px rgba(255,255,255,.4));
+}
+
+
+/* =========================
+   CARD STATUS
+========================= */
+
+.card{
+    margin-top:40px;
+
+    background:#091827;
+
+    border:1px solid #17304d;
+
+    border-radius:16px;
+
+    padding:20px;
+}
+
+.systems-title{
+    color:white;
+
+    font-size:14px;
+
+    letter-spacing:1px;
+
+    margin-bottom:20px;
+}
+
+.system-list{
+    list-style:none;
+}
+
+.system-item{
+    display:flex;
+
+    align-items:center;
+
+    margin-bottom:18px;
+}
+
+.system-item:last-child{
+    margin-bottom:0;
+}
+
+.system-icon{
+    width:16px;
+    height:16px;
+
+    margin-right:12px;
+
+    filter:
+        drop-shadow(0 0 4px #00ff6a)
+        drop-shadow(0 0 8px #00ff6a);
+}
+
+.system-name{
+    color:#b8c7d9;
+
+    font-size:14px;
+}
+
+.system-status{
+    margin-left:auto;
+
+    color:#00ff6a;
+
+    font-size:12px;
+
+    font-weight:700;
+}
+
+
+/* =========================
+   CONTEÚDO PRINCIPAL
+========================= */
+
+.main-content{
+    flex:1;
+
+    padding:40px;
+
+    color:white;
+}
+
+.main-content h1{
+    margin-bottom:10px;
+}
