@@ -1,0 +1,191 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+   background-color: #070f1b;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+   justify-content: space-between;
+   margin: 0;
+   padding: 20px;
+   background-color: #08111F;
+
+}
+.logo-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: #ffffff;
+}
+.sublogo{
+    font-size: 10px;
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    margin:0;
+}
+.container img{
+   
+    width: 40px;
+    height: 40px;
+    
+}
+.logo{
+    font-size: 24px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+     margin:0;
+     letter-spacing: 2px;
+}
+.info-container{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    color: #ffffff;
+}
+
+.info-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centraliza título e valor */
+    justify-content: center;
+    color: #ffffff;
+}
+
+.titulo{
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.valor{
+    color: #ffffff;
+}
+.valor-verde{
+    color: #00ff15;
+}
+.left{
+    display: flex;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #ffffff;  
+}
+.left p{
+    margin: 0;
+    border-radius: 40px;
+    background: linear-gradient(135deg, #08111F, #0d213a);
+    border: 1px solid #151672;
+    padding: 5px 10px;
+}
+.bola-verde{
+    color: #00ff15;
+    font-size: 18px;
+}
+.left img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;  
+}
+
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+.cards {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.card {
+    width: 260px;
+    height: 110px; /* mesma altura para todos */
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centraliza verticalmente */
+    align-items: flex-start;   
+    padding: 15px; /* centraliza horizontalmente */
+    
+}
+.card h2 {
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+}
+.card .valor_numerico{
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+}
+.card p {
+    font-size: 10px;
+    color: #ffffff;
+    margin: 8px 0 0 0;
+}
+.card-azul {
+    background: linear-gradient(135deg, #06111f, #092b57); 
+    border: 1px solid #007bff;
+
+}
+.card-azul h2 {
+    color: #0f6fd6;
+}
+.valor_azul {
+    color: #00ff15;
+}
+
+.card-amarelo {
+    background: linear-gradient(135deg, #111111, #634d10); 
+    border: 1px solid #ffbb00;
+}
+.card-amarelo h2 {
+    color: #dfa60c;
+}
+.valor_amarelo {
+    color: #ffbb00;
+}
+
+.card-vermelho {
+    background: linear-gradient(135deg, #120816, #52081d); 
+    border: 1px solid #ff0000;
+}
+.valor_vermelho {
+    color: #ffbb00;
+}
+.card-vermelho h2 {
+    color: #da0d0d;
+}
+
+.card-verde {
+    background: linear-gradient(135deg, #051316, #085a44); 
+    border: 1px solid #00ff88;
+}   
+.card-verde h2 {
+    color: #10e07f;
+}
+
+.planeta{
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    background-color: #0f6fd6;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #051316, #13124e);
+    border: 1px solid #0d10a1;
+}
