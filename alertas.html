@@ -4,78 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alertas do Sistema | Sistema Orbital</title>
+
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="assets/images/Space-guardian-logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <header class="cabecalho-principal">
+
+<header class="cabecalho-principal">
     <div class="marca">
         <img src="assets/images/Space-guardian-logo.png" alt="Logo da Agência de Defesa Espacial" class="logo-imagem">
-        <h1>Centro de Comando Orbital</h1>
+        <h1>Space Guardian</h1>
     </div>
-    
+
     <nav aria-label="Navegação Completa">
         <ul>
             <li>
                 <a href="index.html">
-                    <img src="assets/icons/lar.png" alt="" class="icone-menu" aria-hidden="true">
-                    Painel Principal
+                    <img src="assets/icons/lar.png" alt="" class="icone-menu">
+                    PAINEL PRINCIPAL
                 </a>
             </li>
+
             <li>
                 <a href="detritos.html">
-                    <img src="assets/icons/microscopico.png" alt="" class="icone-menu" aria-hidden="true">
-                    Catálogo de Detritos
+                    <img src="assets/icons/microscopico.png" alt="" class="icone-menu">
+                    DETRITOS ESPACIAIS
                 </a>
             </li>
+
             <li>
                 <a href="alertas.html">
-                    <img src="assets/icons/perigo.png" alt="" class="icone-menu" aria-hidden="true">
-                    Registro de Alertas
+                    <img src="assets/icons/perigo.png" alt="" class="icone-menu">
+                    REGISTRO DE ALERTAS
                 </a>
             </li>
+
             <li>
                 <a href="satelites.html">
-                    <img src="assets/icons/satelite2.png" alt="" class="icone-menu" aria-hidden="true">
-                    Frota de Satélites
+                    <img src="assets/icons/satelite2.png" alt="" class="icone-menu">
+                    SATÉLITES
                 </a>
             </li>
         </ul>
     </nav>
 </header>
 
-    <main class="container">
-        <h2>Registro de Alertas e Ocorrências</h2>
-        <p>Histórico das últimas 24 horas no setor monitorado.</p>
-        
-        <section class="grid-botoes" style="margin-top: 2rem;">
-            <article class="card" style="border-left: 4px solid var(--cor-perigo);">
-                <header>
-                    <h3>⚠️ Rota de Colisão Evitada</h3>
-                    <span class="status-perigo">Crítico - 14:32</span>
-                </header>
-                <p>O satélite de comunicação BR-SAT precisou realizar manobra evasiva consumindo 2% de combustível devido a um fragmento de tamanho médio não catalogado.</p>
-            </article>
+<main class="container">
 
-            <article class="card" style="border-left: 4px solid var(--cor-sucesso);">
-                <header>
-                    <h3>✅ Atualização de Telemetria</h3>
-                    <span class="status-seguro">Informativo - 12:00</span>
-                </header>
-                <p>Todos os sistemas operando dentro da normalidade. Varredura do setor B-4 concluída sem novas detecções.</p>
-            </article>
+    <h2>Registro de Alertas e Ocorrências</h2>
+    <p>Histórico das últimas 24 horas no setor monitorado.</p>
 
-            <article class="card" style="border-left: 4px solid #f59e0b;">
-                <header>
-                    <h3>⚡ Tempestade Solar Prevista</h3>
-                    <span style="color: #f59e0b; font-weight: bold;">Atenção - 09:15</span>
-                </header>
-                <p>Anomalia magnética detectada. Recomendado colocar sensores óticos em modo de segurança nas próximas 6 horas.</p>
-            </article>
-        </section>
-    </main>
+    <section class="alertas-grid">
 
-    <footer>
-        <p>&copy; 2026 Agência de Defesa Espacial. Todos os direitos reservados.</p>
-    </footer>
+        <article class="card_alertas alerta-critico">
+            <header>
+                <h3>⚠️ Rota de Colisão Evitada</h3>
+                <span class="status-perigo">Crítico - 14:32</span>
+            </header>
+
+            <p>
+                O satélite de comunicação BR-SAT precisou realizar manobra evasiva
+                consumindo 2% de combustível devido a um fragmento de tamanho médio
+                não catalogado.
+            </p>
+        </article>
+
+        <article class="card_alertas alerta-sucesso">
+            <header>
+                <h3>✅ Atualização de Telemetria</h3>
+                <span class="status-seguro">Informativo - 12:00</span>
+            </header>
+
+            <p>
+                Todos os sistemas operando dentro da normalidade.
+                Varredura do setor B-4 concluída sem novas detecções.
+            </p>
+        </article>
+
+        <article class="card_alertas alerta-atencao">
+            <header>
+                <h3>⚡ Tempestade Solar Prevista</h3>
+                <span class="status-atencao">Atenção - 09:15</span>
+            </header>
+
+            <p>
+                Anomalia magnética detectada. Recomendado colocar sensores óticos
+                em modo de segurança nas próximas 6 horas.
+            </p>
+        </article>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Agência de Defesa Espacial. Todos os direitos reservados.</p>
+</footer>
+
 </body>
 </html>

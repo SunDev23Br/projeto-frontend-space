@@ -1,64 +1,117 @@
 /* =========================================
-   Design Tokens (Variáveis)
-   ========================================= */
+   1. VARIÁVEIS GLOBAIS
+========================================= */
+
 :root {
     --cor-fundo: #050814;
     --cor-superficie: #111827;
     --cor-texto-principal: #f3f4f6;
     --cor-texto-secundario: #9ca3af;
-    
-    --cor-primaria: #3b82f6; /* Azul espacial */
+
+    --cor-primaria: #3b82f6;
     --cor-primaria-hover: #2563eb;
-    --cor-sucesso: #10b981; /* Verde */
-    --cor-perigo: #ef4444; /* Vermelho alerta */
-    
-    --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --cor-sucesso: #10b981;
+    --cor-perigo: #ef4444;
+    --cor-atencao: #f59e0b;
+
+    --fonte-principal: 'Inter', sans-serif;
+
     --espacamento-padrao: 1rem;
     --borda-raio: 8px;
 }
 
+
 /* =========================================
-   Reset e Tipografia Base
-   ========================================= */
+   2. RESET E BASE
+========================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html,
 body {
+    min-height: 100vh;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
     background-color: var(--cor-fundo);
     color: var(--cor-texto-principal);
     font-family: var(--fonte-principal);
     line-height: 1.6;
 }
 
+main {
+    flex: 1;
+}
+
+
 /* =========================================
-   Layout do Cabeçalho e Logo
-   ========================================= */
+   3. CONTAINER E LAYOUT
+========================================= */
+
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 var(--espacamento-padrao);
+}
+
+.grid-layout {
+    display: grid;
+    gap: 1rem;
+}
+
+.grid-botoes {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    border: 1px solid var(--cor-perigo);
+}
+
+.divisor {
+    margin: 2rem 0;
+    border-color: #1f2937;
+}
+
+.divisor-linha {
+    margin: 2rem 0;
+    border: none;
+    border-top: 1px solid #1f2937;
+}
+
+
+/* =========================================
+   4. CABEÇALHO E MENU
+========================================= */
+
 .cabecalho-principal {
     background-color: var(--cor-superficie);
     padding: 1rem var(--espacamento-padrao);
     border-bottom: 2px solid var(--cor-primaria);
-    
-    /* Flexbox para alinhar logo/título com a navegação */
+
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    text-align: center;
 }
 
 .marca {
     display: flex;
     align-items: center;
-    gap: 1rem; /* Espaçamento entre a logo e o texto h1 */
+    gap: 1rem;
 }
 
 .logo-imagem {
-    width: 60px; /* Tamanho da logo - ajuste conforme o seu arquivo */
+    width: 60px;
     height: auto;
     object-fit: contain;
-    border-radius: 30%; /* Deixa a logo circular, se for o caso */
+    border-radius: 30%;
 }
 
 .cabecalho-principal ul {
@@ -67,6 +120,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1.5rem;
+    margin-top: 0.5rem;
 }
 
 .cabecalho-principal a {
@@ -74,73 +128,163 @@ body {
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
-}
 
-.cabecalho-principal a:hover { 
-    color: var(--cor-primaria); 
-}
-
-/* Responsividade do cabeçalho para telas maiores (Desktop) */
-@media (min-width: 768px) {
-    .cabecalho-principal {
-        flex-direction: row; /* Coloca a marca e o menu lado a lado */
-        justify-content: space-between; /* Logo/Título na esquerda, Menu na direita */
-        align-items: center; /* Centraliza tudo verticalmente */
-    }
-    
-    .cabecalho-principal ul {
-        justify-content: flex-end; /* Garante que os itens do menu fiquem alinhados à direita */
-        gap: 2rem; /* Espaçamento entre as opções do menu */
-    }
-}
-/* Estilo dos links do menu */
-.cabecalho-principal a {
-    color: var(--cor-texto-secundario);
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-    
-    /* Adicionando Flexbox para alinhar ícone e texto */
     display: flex;
     align-items: center;
-    gap: 0.5rem; /* Espaço entre o ícone e o texto */
+    gap: 0.5rem;
 }
 
-.cabecalho-principal a:hover { 
-    color: var(--cor-primaria); 
+.cabecalho-principal a:hover {
+    color: var(--cor-primaria);
 }
 
-/* Tamanho e comportamento dos ícones do menu */
 .icone-menu {
-    width: 20px; /* Ajuste este valor se quiser ícones maiores ou menores */
+    width: 20px;
     height: 20px;
-    object-fit: contain; /* Garante que o ícone não fique distorcido */
+    object-fit: contain;
     transition: opacity 0.3s;
 }
 
-/* Efeito visual extra ao passar o mouse */
 .cabecalho-principal a:hover .icone-menu {
     opacity: 0.8;
 }
 
 
-
-
-.container {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 0 var(--espacamento-padrao);
-}
+/* =========================================
+   5. CARDS GERAIS
+========================================= */
 
 .card {
     background-color: var(--cor-superficie);
     padding: 1.5rem;
     border-radius: var(--borda-raio);
-    border: 1px solid #1f2937;
+    border: 1px solid var(--cor-primaria);
     margin-bottom: 1rem;
 }
 
-/* Botões */
+.card-sistema {
+    border-top-width: 3px;
+    border-top-style: solid;
+}
+
+.card-detritos {
+    border: 1px solid var(--cor-primaria);
+}
+
+.card-alertas {
+    border: 1px solid var(--cor-perigo);
+}
+
+.card-satelites {
+    border: 1px solid var(--cor-sucesso);
+}
+
+.descricao-card {
+    color: var(--cor-texto-secundario);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.link-card {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.titulo-navegacao {
+    margin: 2rem 0 1rem;
+}
+
+
+/* =========================================
+   6. CARDS DE ALERTAS
+========================================= */
+
+.alertas-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.card_alertas {
+    background-color: var(--cor-superficie);
+    padding: 1.5rem;
+    border-radius: var(--borda-raio);
+    margin-bottom: 1rem;
+    transition: 0.3s ease;
+}
+
+.card_alertas:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.alerta-critico {
+    border-left: 4px solid var(--cor-perigo);
+}
+
+.alerta-sucesso {
+    border-left: 4px solid var(--cor-sucesso);
+}
+
+.alerta-atencao {
+    border-left: 4px solid var(--cor-atencao);
+}
+
+
+/* =========================================
+   7. CARDS DE SATÉLITES
+========================================= */
+
+.card_status {
+    background-color: var(--cor-superficie);
+    padding: 1.5rem;
+    border-radius: var(--borda-raio);
+}
+
+.painel-status {
+    border-left: 4px solid var(--cor-primaria);
+}
+
+.painel_meteoro {
+    border-left: 4px solid var(--cor-perigo);
+}
+
+
+/* =========================================
+   8. CARD DE EVACUAÇÃO
+========================================= */
+
+.card-evacuacao {
+    background-color: var(--cor-superficie);
+    padding: 1.5rem;
+    border-radius: var(--borda-raio);
+    border: 1px solid var(--cor-perigo);
+    margin-bottom: 1rem;
+}
+
+.descricao-evacuacao {
+    margin-bottom: 1rem;
+    color: var(--cor-texto-secundario);
+}
+
+.painel-alerta {
+    margin-top: 1.5rem;
+    background-color: #450a0a;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.contador-texto {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+
+/* =========================================
+   9. BOTÕES
+========================================= */
+
 .btn {
     padding: 0.75rem 1.5rem;
     border: none;
@@ -149,6 +293,10 @@ body {
     cursor: pointer;
     transition: background-color 0.3s;
     width: 100%;
+
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
 }
 
 .btn:disabled {
@@ -156,19 +304,43 @@ body {
     cursor: not-allowed;
 }
 
-.btn-primario { background-color: var(--cor-primaria); color: white; }
-.btn-primario:hover:not(:disabled) { background-color: var(--cor-primaria-hover); }
+.btn-primario {
+    background-color: var(--cor-primaria);
+    color: white;
+}
 
-.btn-secundario { background-color: transparent; border: 2px solid var(--cor-primaria); color: var(--cor-primaria); }
-.btn-secundario:hover:not(:disabled) { background-color: var(--cor-primaria); color: white; }
+.btn-primario:hover:not(:disabled) {
+    background-color: var(--cor-primaria-hover);
+}
 
-.btn-perigo { background-color: var(--cor-perigo); color: white; }
-.btn-perigo:hover:not(:disabled) { background-color: #dc2626; }
+.btn-secundario {
+    background-color: rgba(139, 135, 135, 0.466);
+    opacity: 0.5;
+    border: 2px solid var(--cor-primaria);
+    color: white;
+    font-size: 1rem;
+}
 
-/* Utilitários de Estado e Formulários */
-.oculto { display: none !important; }
-.status-seguro { color: var(--cor-sucesso); font-weight: bold; }
-.status-perigo { color: var(--cor-perigo); font-weight: bold; animation: piscar 1s infinite; }
+.btn-secundario:hover:not(:disabled) {
+    background-color: var(--cor-primaria);
+    color: white;
+    opacity: 1;
+}
+
+.btn-perigo {
+    background-color: var(--cor-perigo);
+    color: white;
+    font-size: 1rem;
+}
+
+.btn-perigo:hover:not(:disabled) {
+    background-color: #dc2626;
+}
+
+
+/* =========================================
+   10. FORMULÁRIOS
+========================================= */
 
 input {
     width: 100%;
@@ -180,48 +352,17 @@ input {
     border-radius: 4px;
 }
 
-.mensagem-erro { color: var(--cor-perigo); margin-top: 0.5rem; font-size: 0.9rem; }
-
-/* =========================================
-   Layout e Responsividade
-   ========================================= */
-.cabecalho-principal {
-    background-color: var(--cor-superficie);
-    padding: 1rem var(--espacamento-padrao);
-    text-align: center;
-    border-bottom: 2px solid var(--cor-primaria);
-}
-
-.cabecalho-principal ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
+.mensagem-erro {
+    color: var(--cor-perigo);
     margin-top: 0.5rem;
+    font-size: 0.9rem;
 }
-
-.cabecalho-principal a {
-    color: var(--cor-texto-secundario);
-    text-decoration: none;
-}
-
-.cabecalho-principal a:hover { color: var(--cor-primaria); }
-
-.grid-layout { display: grid; gap: 1rem; }
-.grid-botoes { display: flex; gap: 1rem; flex-direction: column; }
-
-@keyframes piscar {
-    0% { opacity: 1; }
-    50% { opacity: 0.5; }
-    100% { opacity: 1; }
-}
-
-/* Responsividade do cabeçalho para telas maiores (Desktop) */
 
 
 /* =========================================
-   Estilos de Tabelas (Página de Detritos)
-   ========================================= */
+   11. TABELA DE DETRITOS
+========================================= */
+
 .tabela-dados {
     width: 100%;
     border-collapse: collapse;
@@ -229,7 +370,8 @@ input {
     color: var(--cor-texto-principal);
 }
 
-.tabela-dados th, .tabela-dados td {
+.tabela-dados th,
+.tabela-dados td {
     padding: 1rem;
     text-align: left;
     border-bottom: 1px solid #1f2937;
@@ -245,33 +387,40 @@ input {
     background-color: #1a2235;
 }
 
-.btn {
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: var(--borda-raio);
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    width: 100%;
-    /* Garante consistência se aplicado em tags <a> */
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-}
 
 /* =========================================
-   Terminal de Comando (Easter Egg)
-   ========================================= */
-.divisor-linha {
-    margin: 2rem 0;
-    border: none;
-    border-top: 1px solid #1f2937;
+   12. STATUS E UTILITÁRIOS
+========================================= */
+
+.oculto {
+    display: none !important;
 }
+
+.status-seguro {
+    color: var(--cor-sucesso);
+    font-weight: bold;
+}
+
+.status-perigo {
+    color: var(--cor-perigo);
+    font-weight: bold;
+    animation: piscar 1s infinite;
+}
+
+.status-atencao {
+    color: var(--cor-atencao);
+    font-weight: 700;
+}
+
+
+/* =========================================
+   13. TERMINAL
+========================================= */
 
 .terminal-container {
     background-color: #000000;
     border: 1px solid var(--cor-primaria);
-    font-family: monospace; /* Fonte com estilo de código */
+    font-family: monospace;
 }
 
 .terminal-header {
@@ -318,5 +467,56 @@ input {
     outline: none;
     font-size: 0.9rem;
     padding: 0;
-    margin: 0; /* Remove a margem padrão do input do seu CSS base */
+    margin: 0;
+}
+
+
+/* =========================================
+   14. RODAPÉ
+========================================= */
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    align-items: auto;
+    padding: 1rem;
+    background-color: var(--cor-superficie);
+    color: var(--cor-texto-secundario);
+}
+
+
+/* =========================================
+   15. ANIMAÇÕES
+========================================= */
+
+@keyframes piscar {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   16. RESPONSIVIDADE
+========================================= */
+
+@media (min-width: 768px) {
+    .cabecalho-principal {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .cabecalho-principal ul {
+        justify-content: flex-end;
+        gap: 2rem;
+    }
 }
