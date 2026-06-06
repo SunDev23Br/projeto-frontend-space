@@ -18,14 +18,20 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     color: #ffffff;
 }
 .sublogo{
-    font-size: 14px;
+    font-size: 10px;
     font-family: 'Arial', sans-serif;
     color: #ffffff;
     margin:0;
+}
+.container img{
+   
+    width: 40px;
+    height: 40px;
+    
 }
 .logo{
     font-size: 24px;
@@ -33,6 +39,7 @@ body{
     font-weight: bold;
     color: #ffffff;
      margin:0;
+     letter-spacing: 2px;
 }
 .info-container{
     display: flex;
@@ -57,13 +64,34 @@ body{
 .valor{
     color: #ffffff;
 }
+.valor-verde{
+    color: #00ff15;
+}
 .left{
     display: flex;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    color: #ffffff;
+    gap: 10px;
+    color: #ffffff;  
+}
+.left p{
+    margin: 0;
+    border-radius: 40px;
+    background: linear-gradient(135deg, #08111F, #0d213a);
+    border: 1px solid #151672;
+    padding: 5px 10px;
+}
+.bola-verde{
+    color: #00ff15;
+    font-size: 18px;
+}
+.left img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;  
 }
 
 
