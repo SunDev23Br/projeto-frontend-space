@@ -259,3 +259,64 @@ input {
     text-decoration: none;
 }
 
+/* =========================================
+   Terminal de Comando (Easter Egg)
+   ========================================= */
+.divisor-linha {
+    margin: 2rem 0;
+    border: none;
+    border-top: 1px solid #1f2937;
+}
+
+.terminal-container {
+    background-color: #000000;
+    border: 1px solid var(--cor-primaria);
+    font-family: monospace; /* Fonte com estilo de código */
+}
+
+.terminal-header {
+    border-bottom: 1px solid #1f2937;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.terminal-header h3 {
+    color: var(--cor-sucesso);
+    font-size: 1rem;
+    margin: 0;
+}
+
+.terminal-output {
+    height: 150px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+    color: var(--cor-sucesso);
+    font-size: 0.9rem;
+}
+
+.terminal-output p {
+    margin-bottom: 4px;
+}
+
+.terminal-input-area {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.terminal-prompt {
+    color: var(--cor-sucesso);
+    font-weight: bold;
+}
+
+.terminal-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--cor-sucesso);
+    font-family: monospace;
+    outline: none;
+    font-size: 0.9rem;
+    padding: 0;
+    margin: 0; /* Remove a margem padrão do input do seu CSS base */
+}

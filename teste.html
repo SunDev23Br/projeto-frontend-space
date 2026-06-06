@@ -99,6 +99,7 @@
         </section>
 
        <section id="painel-controle" class="container oculto">
+            
             <h2>Ações de Emergência</h2>
             <div class="card grid-botoes">
                 <button id="btn-escanear" class="btn btn-secundario">Escanear Setor</button>
@@ -120,6 +121,24 @@
                     <button id="btn-abortar" class="btn btn-secundario">Confirmar Cancelamento</button>
                 </div>
             </div>
+
+            <hr class="divisor-linha">
+            <div class="card terminal-container">
+                <header class="terminal-header">
+                    <h3>>_ Terminal S.O.</h3>
+                </header>
+                
+                <div id="terminal-output" class="terminal-output">
+                    <p>Sistema Operacional Orbital v4.2</p>
+                    <p>Digite 'help' para listar os comandos disponíveis.</p>
+                </div>
+                
+                <div class="terminal-input-area">
+                    <span class="terminal-prompt">admin@orbital:~$</span>
+                    <input type="text" id="terminal-input" autocomplete="off" class="terminal-input">
+                </div>
+            </div>
+
         </section>
     </main>
 

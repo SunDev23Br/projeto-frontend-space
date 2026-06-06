@@ -21,9 +21,34 @@ let intervaloTelemetria;
 let escudosAtivados = false;
 
 // ==========================================
+// 0. Verificação de Segurança (Proteção de Rotas)
+// ==========================================
+// BOM: Verifica se o 'crachá' existe na sessão atual
+const tripulanteLogado = sessionStorage.getItem('autorizacaoSessao');
+
+// Pega o nome do arquivo atual na URL
+const paginaAtual = window.location.pathname;
+const ehPaginaInicial = paginaAtual.endsWith('index.html') || paginaAtual === '/' || paginaAtual === '';
+
+// Lógica de bloqueio: Se NÃO tem crachá e NÃO está na Home
+if (!tripulanteLogado && !ehPaginaInicial) {
+    // BOM: Alerta e redirecionamento forçado para a página de login
+    alert("ACESSO NEGADO: Identificação de tripulante necessária para acessar este setor.");
+    window.location.href = 'index.html'; 
+}
+
+// ==========================================
 // 1. Eventos e Lógica Básica (Login)
 // ==========================================
 if (loginForm) {
+    // Se o usuário já estiver logado e voltar para a Home, esconde o login automaticamente
+    if (tripulanteLogado === 'true') {
+        loginSection.classList.add('oculto');
+        dashboard.classList.remove('oculto');
+        painelControle.classList.remove('oculto');
+        iniciarSistema();
+    }
+
     loginForm.addEventListener('submit', function(evento) {
         evento.preventDefault(); 
     
@@ -31,6 +56,9 @@ if (loginForm) {
         const senha = document.getElementById('senha').value;
     
         if (usuario === 'admin' && senha === '1234') {
+            // NOVO: BOM - Salva o crachá virtual no navegador
+            sessionStorage.setItem('autorizacaoSessao', 'true');
+
             loginSection.classList.add('oculto');
             dashboard.classList.remove('oculto');
             painelControle.classList.remove('oculto');
@@ -255,4 +283,82 @@ if (btnAlertaVermelho) {
             inputAbortar.value = ''; // Limpa o campo para ele tentar de novo
         }
     });
+}
+
+// ==========================================
+// 7. Terminal de Comando Interativo (Eventos de Teclado)
+// ==========================================
+const terminalInput = document.getElementById('terminal-input');
+const terminalOutput = document.getElementById('terminal-output');
+
+// O if garante que o código só rode na página que tem o terminal
+if (terminalInput && terminalOutput) {
+    terminalInput.addEventListener('keydown', function(evento) {
+        // Verifica se a tecla pressionada foi o "Enter"
+        if (evento.key === 'Enter') {
+            // Captura o texto, tira os espaços em branco e converte para minúsculo
+            const comando = terminalInput.value.trim().toLowerCase();
+            
+            // Limpa o campo de texto imediatamente
+            terminalInput.value = '';
+
+            // Se o usuário apertou Enter sem digitar nada, apenas ignora
+            if (comando === '') return;
+
+            // 1. Imprime na tela o comando que o usuário digitou
+            adicionarLinhaTerminal(`admin@orbital:~$ ${comando}`, 'var(--cor-texto-secundario)');
+
+            // 2. Lógica de processamento dos comandos (if / else if)
+            if (comando === 'help') {
+                adicionarLinhaTerminal('Comandos disponíveis: help, clear, scan --force, status, logout', 'var(--cor-sucesso)');
+            } 
+            else if (comando === 'clear') {
+                // Modificação bruta de DOM para limpar a tela
+                terminalOutput.innerHTML = ''; 
+            } 
+            else if (comando === 'scan --force') {
+                adicionarLinhaTerminal('Iniciando varredura profunda de segurança...', '#f59e0b'); // Laranja
+                
+                // BOM: Simula um atraso no processamento do servidor
+                setTimeout(() => {
+                    adicionarLinhaTerminal('Varredura concluída. Nenhuma anomalia oculta detectada.', 'var(--cor-sucesso)');
+                    rolarTerminalParaBaixo();
+                }, 1500);
+            } 
+            else if (comando === 'status') {
+                adicionarLinhaTerminal('Todos os sistemas primários online. Bateria: 98%.', 'var(--cor-sucesso)');
+            } 
+            else if (comando === 'logout') {
+                adicionarLinhaTerminal('Encerrando sessão segura...', '#f59e0b');
+                
+                setTimeout(() => {
+                    // BOM: Remove o crachá da sessão e recarrega a página
+                    sessionStorage.removeItem('autorizacaoSessao');
+                    window.location.href = 'index.html';
+                }, 1500);
+            }
+            else {
+                // Caso digite um comando que não existe
+                adicionarLinhaTerminal(`bash: ${comando}: comando não encontrado. Digite 'help'.`, 'var(--cor-perigo)');
+            }
+
+            // Garante que o scroll acompanhe as novas mensagens
+            rolarTerminalParaBaixo();
+        }
+    });
+
+    // Função auxiliar para injetar HTML dinâmico no DOM
+    function adicionarLinhaTerminal(texto, cor) {
+        const novaLinha = document.createElement('p');
+        novaLinha.textContent = texto;
+        novaLinha.style.color = cor;
+        novaLinha.style.marginBottom = '4px';
+        
+        terminalOutput.appendChild(novaLinha);
+    }
+
+    // Função auxiliar para rolar a barra do terminal sempre para o final
+    function rolarTerminalParaBaixo() {
+        terminalOutput.scrollTop = terminalOutput.scrollHeight;
+    }
 }
