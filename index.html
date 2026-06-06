@@ -3,39 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Monitoramento Orbital | Rastreador de Detritos</title>
+    <title>Space Guardian | Rastreador de Detritos</title>
+    <link rel="icon" type="image/png" href="assets/images/Space-guardian-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header class="cabecalho-principal">
     <div class="marca">
         <img src="assets/images/Space-guardian-logo.png" alt="Logo da Agência de Defesa Espacial" class="logo-imagem">
-        <h1>Centro de Comando Orbital</h1>
+        <h1>Space Guardian</h1>
     </div>
     <nav aria-label="Navegação Completa">
     <ul>
         <li>
-            <a href="teste.html">
+            <a href="index.html">
                 <img src="assets/icons/lar.png" alt="" class="icone-menu" aria-hidden="true">
-                Painel Principal
+                PAINEL PRINCIPAL
             </a>
         </li>
         <li>
             <a href="detritos.html">
                 <img src="assets/icons/microscopico.png" alt="" class="icone-menu" aria-hidden="true">
-                Catálogo de Detritos
+                DETRITOS ESPACIAIS
             </a>
         </li>
         <li>
             <a href="alertas.html">
                 <img src="assets/icons/perigo.png" alt="" class="icone-menu" aria-hidden="true">
-                Registro de Alertas
+                REGISTRO DE ALERTAS
             </a>
         </li>
         <li>
             <a href="satelites.html">
                 <img src="assets/icons/satelite2.png" alt="" class="icone-menu" aria-hidden="true">
-                Frota de Satélites
+                SATÉLITES 
             </a>
         </li>
     </ul>
@@ -76,49 +80,99 @@
                 </article>
             </div>
 
-            <h3 style="margin: 2rem 0 1rem 0;">Navegação Avançada do Sistema</h3>
-            <div class="grid-layout">
-                <article class="card" style="border-top: 3px solid var(--cor-primaria);">
-                    <h4>Catálogo de Detritos</h4>
-                    <p style="color: var(--cor-texto-secundario); margin-bottom: 1rem; font-size: 0.9rem;">Lista completa de objetos e lixo espacial rastreados.</p>
-                    <a href="detritos.html" class="btn btn-secundario" style="display: inline-block; text-align: center; text-decoration: none;">Abrir Catálogo</a>
-                </article>
+            <h3 class="titulo-navegacao">Navegação Avançada do Sistema</h3>
 
-                <article class="card" style="border-top: 3px solid var(--cor-perigo);">
-                    <h4>Registro de Alertas</h4>
-                    <p style="color: var(--cor-texto-secundario); margin-bottom: 1rem; font-size: 0.9rem;">Histórico de ocorrências e incidentes críticos nas últimas 24h.</p>
-                    <a href="alertas.html" class="btn btn-secundario" style="display: inline-block; text-align: center; text-decoration: none;">Ver Alertas</a>
-                </article>
+        <div class="grid-layout">
 
-                <article class="card" style="border-top: 3px solid var(--cor-sucesso);">
-                    <h4>Frota de Satélites</h4>
-                    <p style="color: var(--cor-texto-secundario); margin-bottom: 1rem; font-size: 0.9rem;">Verificar integridade, marcas e modelos dos satélites ativos.</p>
-                    <a href="satelites.html" class="btn btn-secundario" style="display: inline-block; text-align: center; text-decoration: none;">Monitorar Frota</a>
-                </article>
-            </div>
+        <article class="card card-detritos">
+                <h4>Catálogo de Detritos</h4>
+
+        <p class="descricao-card">
+            Lista completa de objetos e lixo espacial rastreados.
+        </p>
+
+        <a href="detritos.html" class="btn btn-secundario link-card">
+            Abrir Catálogo
+        </a>
+    </article>
+
+    <article class="card card-alertas">
+        <h4>Registro de Alertas</h4>
+
+        <p class="descricao-card">
+            Histórico de ocorrências e incidentes críticos nas últimas 24h.
+        </p>
+
+        <a href="alertas.html" class="btn btn-secundario link-card">
+            Ver Alertas
+        </a>
+    </article>
+
+    <article class="card card-satelites">
+        <h4>Frota de Satélites</h4>
+
+        <p class="descricao-card">
+            Verificar integridade, marcas e modelos dos satélites ativos.
+        </p>
+
+        <a href="satelites.html" class="btn btn-secundario link-card">
+            Monitorar Frota
+        </a>
+    </article>
+
+</div>
         </section>
 
        <section id="painel-controle" class="container oculto">
-            
-            <h2>Ações de Emergência</h2>
-            <div class="card grid-botoes">
-                <button id="btn-escanear" class="btn btn-secundario">Escanear Setor</button>
-                <button id="btn-escudo" class="btn btn-perigo" disabled>Ativar Escudos Defletores</button>
-            </div>
-            <p id="log-comunicacao" aria-live="polite"></p>
 
-            <hr style="margin: 2rem 0; border-color: #1f2937;">
-            <div class="card" style="border-left: 4px solid var(--cor-perigo);">
-                <h3>Protocolo de Evacuação</h3>
-                <p style="margin-bottom: 1rem; color: var(--cor-texto-secundario);">Em caso de colisão inevitável, inicie a contagem regressiva para abandono da estação.</p>
-                <button id="btn-alerta-vermelho" class="btn btn-perigo">INICIAR ALERTA VERMELHO</button>
-                
-                <div id="painel-evacuacao" class="oculto" style="margin-top: 1.5rem; background-color: #450a0a; padding: 1rem; border-radius: 8px;">
-                    <p class="status-perigo" style="font-size: 1.5rem; text-align: center; margin-bottom: 1rem;">Impacto estimado em: <span id="contador-evacuacao">60</span>s</p>
-                    
-                    <label for="codigo-abortar">Código de Cancelamento (Digite: ABORTAR):</label>
-                    <input type="text" id="codigo-abortar" placeholder="Insira o código de segurança para cancelar...">
-                    <button id="btn-abortar" class="btn btn-secundario">Confirmar Cancelamento</button>
+    <h2>Ações de Emergência</h2>
+
+    <div class="card grid-botoes">
+        <button id="btn-escanear" class="btn btn-secundario">
+            Escanear Setor
+        </button>
+
+        <button id="btn-escudo" class="btn btn-perigo" disabled>
+            Ativar Escudos Defletores
+        </button>
+    </div>
+
+    <p id="log-comunicacao" aria-live="polite"></p>
+
+
+
+    <div class="card-evacuacao">
+        <h3>Protocolo de Evacuação</h3>
+
+        <p class="descricao-evacuacao">
+            Em caso de colisão inevitável, inicie a contagem regressiva para abandono da estação.
+        </p>
+
+        <button id="btn-alerta-vermelho" class="btn btn-perigo">
+            INICIAR ALERTA VERMELHO
+        </button>
+
+        <div id="painel-evacuacao" class="oculto painel-alerta">
+            <p class="status-perigo contador-texto">
+                Impacto estimado em:
+                <span id="contador-evacuacao">60</span>s
+            </p>
+
+            <label for="codigo-abortar">
+                Código de Cancelamento (Digite: ABORTAR):
+            </label>
+
+            <input
+                type="text"
+                id="codigo-abortar"
+                placeholder="Insira o código de segurança para cancelar..."
+            >
+
+            <button id="btn-abortar" class="btn btn-secundario">
+                Confirmar Cancelamento
+            </button>
+            </div>
+            </div>
                 </div>
             </div>
 
