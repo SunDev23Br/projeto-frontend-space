@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frota de Satélites | Sistema Orbital</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="cabecalho-principal">
+    <div class="marca">
+        <img src="assets/images/Space-guardian-logo.png" alt="Logo da Agência de Defesa Espacial" class="logo-imagem">
+        <h1>Centro de Comando Orbital</h1>
+    </div>
+    
+    <nav aria-label="Navegação Completa">
+        <ul>
+            <li>
+                <a href="teste.html">
+                    <img src="assets/icons/lar.png" alt="" class="icone-menu" aria-hidden="true">
+                    Painel Principal
+                </a>
+            </li>
+            <li>
+                <a href="detritos.html">
+                    <img src="assets/icons/microscopico.png" alt="" class="icone-menu" aria-hidden="true">
+                    Catálogo de Detritos
+                </a>
+            </li>
+            <li>
+                <a href="alertas.html">
+                    <img src="assets/icons/perigo.png" alt="" class="icone-menu" aria-hidden="true">
+                    Registro de Alertas
+                </a>
+            </li>
+            <li>
+                <a href="satelites.html">
+                    <img src="assets/icons/satelite2.png" alt="" class="icone-menu" aria-hidden="true">
+                    Frota de Satélites
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+    <main class="container">
+        <h2>Monitoramento da Frota Aliada</h2>
+        <p>Status em tempo real dos satélites sob jurisdição da agência.</p>
+        
+        <div class="grid-layout" style="margin-top: 2rem;">
+            <article class="card painel-status">
+                <h3>Vanguard-X1</h3>
+                <ul>
+                    <li><strong>Status:</strong> <span class="status-seguro">Operacional</span></li>
+                    <li><strong>Fabricante:</strong> AeroSpace Inc.</li>
+                    <li><strong>Modelo:</strong> Observação Ótica (M-2025)</li>
+                    <li><strong>Bateria:</strong> 94%</li>
+                </ul>
+            </article>
+
+            <article class="card painel-status">
+                <h3>ComLink-Alpha</h3>
+                <ul>
+                    <li><strong>Status:</strong> <span class="status-seguro">Operacional</span></li>
+                    <li><strong>Fabricante:</strong> GlobalTech</li>
+                    <li><strong>Modelo:</strong> Telecomunicações (Geo-T)</li>
+                    <li><strong>Bateria:</strong> 88%</li>
+                </ul>
+            </article>
+
+            <article class="card painel-status" style="border: 1px solid var(--cor-perigo);">
+                <h3>Meteoro-BR</h3>
+                <ul>
+                    <li><strong>Status:</strong> <span class="status-perigo">Modo de Segurança</span></li>
+                    <li><strong>Fabricante:</strong> INPE</li>
+                    <li><strong>Modelo:</strong> Clima/Radar (C-400)</li>
+                    <li><strong>Falha:</strong> Propulsor lateral danificado</li>
+                </ul>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Agência de Defesa Espacial. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

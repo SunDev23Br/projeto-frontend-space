@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Detritos | Sistema Orbital</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="cabecalho-principal">
+    <div class="marca">
+        <img src="assets/images/Space-guardian-logo.png" alt="Logo da Agência de Defesa Espacial" class="logo-imagem">
+        <h1>Centro de Comando Orbital</h1>
+    </div>
+    
+    <nav aria-label="Navegação Completa">
+        <ul>
+            <li>
+                <a href="teste.html">
+                    <img src="assets/icons/lar.png" alt="" class="icone-menu" aria-hidden="true">
+                    Painel Principal
+                </a>
+            </li>
+            <li>
+                <a href="detritos.html">
+                    <img src="assets/icons/microscopico.png" alt="" class="icone-menu" aria-hidden="true">
+                    Catálogo de Detritos
+                </a>
+            </li>
+            <li>
+                <a href="alertas.html">
+                    <img src="assets/icons/perigo.png" alt="" class="icone-menu" aria-hidden="true">
+                    Registro de Alertas
+                </a>
+            </li>
+            <li>
+                <a href="satelites.html">
+                    <img src="assets/icons/satelite2.png" alt="" class="icone-menu" aria-hidden="true">
+                    Frota de Satélites
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+    <main class="container">
+        <h2>Catálogo Global de Detritos</h2>
+        <p>Monitoramento contínuo de objetos não operacionais em órbita baixa.</p>
+
+        <section class="card" style="margin: 2rem 0; border-top: 3px solid var(--cor-sucesso);">
+            <h3>📡 Reporte Manual de Radar</h3>
+            <form id="form-reporte" style="margin-top: 1rem;">
+                <div class="grid-layout">
+                    <div>
+                        <label for="novo-id">ID de Rastreio:</label>
+                        <input type="text" id="novo-id" placeholder="Ex: #OBJ-9999" required>
+                    </div>
+                    <div>
+                        <label for="nova-classificacao">Classificação:</label>
+                        <input type="text" id="nova-classificacao" placeholder="Ex: Detrito Metálico" required>
+                    </div>
+                    <div>
+                        <label for="nova-altitude">Altitude (km):</label>
+                        <input type="number" id="nova-altitude" placeholder="Ex: 500" required>
+                    </div>
+                    <div>
+                        <label for="nova-velocidade">Velocidade (km/h):</label>
+                        <input type="number" id="nova-velocidade" placeholder="Ex: 25000" required>
+                    </div>
+                </div>
+                
+                <label for="novo-risco">Nível de Risco:</label>
+                <select id="novo-risco" required style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; background-color: var(--cor-fundo); border: 1px solid var(--cor-texto-secundario); color: var(--cor-texto-principal); border-radius: 4px;">
+                    <option value="" disabled selected>Selecione o nível de risco</option>
+                    <option value="Baixo">Baixo</option>
+                    <option value="Médio">Médio</option>
+                    <option value="Alto">Alto</option>
+                </select>
+
+                <button type="submit" class="btn btn-primario">Adicionar ao Catálogo</button>
+            </form>
+        </section>
+        
+        <div class="card" style="overflow-x: auto;">
+            <table class="tabela-dados">
+                <thead>
+                    <tr>
+                        <th>ID de Rastreio</th>
+                        <th>Classificação</th>
+                        <th>Altitude (km)</th>
+                        <th>Velocidade (km/h)</th>
+                        <th>Nível de Risco</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo-tabela-detritos">
+                    <tr>
+                        <td>#OBJ-8832</td>
+                        <td>Fragmento de Foguete Delta</td>
+                        <td>450</td>
+                        <td>27.500</td>
+                        <td class="status-perigo">Alto</td>
+                    </tr>
+                    </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Agência de Defesa Espacial. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="JS/main.js"></script>
+</body>
+</html>

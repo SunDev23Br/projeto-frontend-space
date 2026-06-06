@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alertas do Sistema | Sistema Orbital</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="cabecalho-principal">
+    <div class="marca">
+        <img src="assets/images/Space-guardian-logo.png" alt="Logo da Agência de Defesa Espacial" class="logo-imagem">
+        <h1>Centro de Comando Orbital</h1>
+    </div>
+    
+    <nav aria-label="Navegação Completa">
+        <ul>
+            <li>
+                <a href="teste.html">
+                    <img src="assets/icons/lar.png" alt="" class="icone-menu" aria-hidden="true">
+                    Painel Principal
+                </a>
+            </li>
+            <li>
+                <a href="detritos.html">
+                    <img src="assets/icons/microscopico.png" alt="" class="icone-menu" aria-hidden="true">
+                    Catálogo de Detritos
+                </a>
+            </li>
+            <li>
+                <a href="alertas.html">
+                    <img src="assets/icons/perigo.png" alt="" class="icone-menu" aria-hidden="true">
+                    Registro de Alertas
+                </a>
+            </li>
+            <li>
+                <a href="satelites.html">
+                    <img src="assets/icons/satelite2.png" alt="" class="icone-menu" aria-hidden="true">
+                    Frota de Satélites
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+    <main class="container">
+        <h2>Registro de Alertas e Ocorrências</h2>
+        <p>Histórico das últimas 24 horas no setor monitorado.</p>
+        
+        <section class="grid-botoes" style="margin-top: 2rem;">
+            <article class="card" style="border-left: 4px solid var(--cor-perigo);">
+                <header>
+                    <h3>⚠️ Rota de Colisão Evitada</h3>
+                    <span class="status-perigo">Crítico - 14:32</span>
+                </header>
+                <p>O satélite de comunicação BR-SAT precisou realizar manobra evasiva consumindo 2% de combustível devido a um fragmento de tamanho médio não catalogado.</p>
+            </article>
+
+            <article class="card" style="border-left: 4px solid var(--cor-sucesso);">
+                <header>
+                    <h3>✅ Atualização de Telemetria</h3>
+                    <span class="status-seguro">Informativo - 12:00</span>
+                </header>
+                <p>Todos os sistemas operando dentro da normalidade. Varredura do setor B-4 concluída sem novas detecções.</p>
+            </article>
+
+            <article class="card" style="border-left: 4px solid #f59e0b;">
+                <header>
+                    <h3>⚡ Tempestade Solar Prevista</h3>
+                    <span style="color: #f59e0b; font-weight: bold;">Atenção - 09:15</span>
+                </header>
+                <p>Anomalia magnética detectada. Recomendado colocar sensores óticos em modo de segurança nas próximas 6 horas.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Agência de Defesa Espacial. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
