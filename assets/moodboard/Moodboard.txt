@@ -1,0 +1,91 @@
+Moodboard do Sistema Space Guardian
+
+1. Paleta de Cores e Tokens (Global Variables)
+A paleta consolida o estilo "Grounded Sci-Fi" com fundos escuros e alto contraste para semântica de interface.
+
+Superfícies (Fundos):
+
+⬛ Fundo Global: #050814 (--cor-fundo)
+
+🔲 Superfície de Cards/Menus: #111827 (--cor-superficie)
+
+➖ Divisores e Cabeçalhos de Tabela: #1f2937
+
+Textos:
+
+⬜ Principal (Títulos/Dados): #f3f4f6 (--cor-texto-principal)
+
+🌫️ Secundário (Apoio/Descrições): #9ca3af (--cor-texto-secundario)
+
+Ações e Alertas (Semântica):
+
+🔵 Ação Primária: #3b82f6 (--cor-primaria) | Hover: #2563eb
+
+🟢 Sucesso/Seguro: #10b981 (--cor-sucesso)
+
+🟠 Atenção/Aviso: #f59e0b (--cor-atencao)
+
+🔴 Perigo/Crítico: #ef4444 (--cor-perigo) | Hover: #dc2626
+
+2. Tipografia
+O sistema utiliza duas famílias tipográficas distintas para separar a interface amigável dos dados brutos do sistema.
+
+Fonte da Interface: 'Inter', sans-serif (--fonte-principal). Usada globalmente para garantir legibilidade máxima.
+
+Fonte de Engenharia/Terminal: monospace (declarada diretamente nas classes .terminal-container e .terminal-input). Dá o aspecto de código e dados de máquina.
+
+3. Estrutura UI (Layout e Medidas)
+A arquitetura do layout é baseada em medidas relativas e grids padronizados.
+
+Espaçamento e Curvas:
+
+Espaçamento Padrão (Padding/Gap): 1rem
+
+Arredondamento de Bordas: 8px (--borda-raio)
+
+Containers e Malhas:
+
+O conteúdo principal (.container) é limitado a 1000px de largura máxima e centralizado automaticamente.
+
+O padrão de organização interna é o .grid-layout com gap: 1rem.
+
+Responsividade (Mobile-First):
+
+Abaixo de 768px, o cabeçalho empilha a logo e o menu verticalmente.
+
+Acima de 768px (@media min-width: 768px), o cabeçalho se expande horizontalmente (em linha) usando Flexbox.
+
+4. Componentes Reutilizáveis
+O CSS revela um sistema de design baseado em componentes isolados e estados de interação.
+
+Cards de Interface (.card e variações):
+
+Estrutura base com padding de 1.5rem, fundo de superfície e borda primária.
+
+Interação de Hover: Os cards de alertas (.card_alertas) sobem ligeiramente (transform: translateY(-5px)) e projetam uma sombra densa (box-shadow) ao passar o mouse.
+
+Bordas Semânticas: Uso de bordas laterais esquerdas (4px) para indicar status rápido (ex: .alerta-critico, .alerta-sucesso).
+
+Botões (.btn):
+
+Ocupam 100% da largura do contêiner por padrão, ideais para o grid lateral.
+
+Primário: Fundo sólido azul.
+
+Secundário: Fundo translúcido cinza, borda azul de 2px. Revela sua cor ao receber hover.
+
+Perigo: Fundo sólido vermelho intenso.
+
+Estado Desabilitado (:disabled): Opacidade cai para 50% e o cursor vira "proibido" (not-allowed), comunicando que a ação está bloqueada.
+
+Tabelas de Dados (.tabela-dados):
+
+Design minimalista: apenas bordas inferiores (1px solid #1f2937) separando as linhas. Cabeçalho destacado e as linhas clareiam ao receber hover (#1a2235).
+
+Terminal de Comando (.terminal-container):
+
+Fundo preto total (#000000). Textos e input unicamente na cor verde sucesso (var(--cor-sucesso)), remetendo a monitores de fósforo verde retrô/hackers.
+
+Feedbacks Visuais:
+
+Uso de animação Keyframe (@keyframes piscar) na classe .status-perigo, fazendo textos de alertas críticos piscarem continuamente para atrair a atenção do operador.
