@@ -92,8 +92,13 @@ Um terminal interativo oculto que processa comandos ao pressionar a tecla **"Ent
 ├── detritos.html     # Catálogo com tabela interativa e inserção de dados
 ├── alertas.html      # Feed de registro de ocorrências
 ├── satelites.html    # Monitoramento de status da frota
-├── style.css         # Folha de estilos unificada
-├── script.js         # Lógica centralizada de validação, DOM e BOM
+└── css/
+    ├── styles.css    # Página de estilos do sistema
+└── js/
+    ├── main.js/     # Lógica centralizada de validação, DOM e BOM
 └── assets/
-    ├── icons/        # Ícones de navegação
-    └── images/       # Logo do sistema e favicon
+    ├── icons/       # Ícones de navegação
+    └── images/      # Logo do sistema e favicon
+    └── Moodboard/   # Moodboard do sistema
+      ├── referencias_visuais/    # referencias visuais do sistema
+      └── Moodboard.txt/          # Paleta de Cores e Tokens (Global Variables),Tipografia,Estrutura UI e Componentes Reutilizaveis
